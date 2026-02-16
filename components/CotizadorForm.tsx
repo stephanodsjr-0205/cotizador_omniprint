@@ -287,11 +287,11 @@ export default function CotizadorForm() {
         }
         const { data: creado, error: errCliente } = await supabase
           .from('clientes')
-          .insert(nuevoCliente)
+          .insert(nuevoCliente as any)
           .select('id_cliente')
           .single()
         if (errCliente) throw errCliente
-        idCliente = creado?.id_cliente ?? null
+        idCliente = (creado as any)?.id_cliente ?? null
       } catch (e: any) {
         setError(`Error al crear cliente: ${e.message}`)
         setLoading(false)
@@ -302,7 +302,7 @@ export default function CotizadorForm() {
         setError('Selecciona un cliente o crea uno nuevo')
         return
       }
-      idCliente = clienteSeleccionado.id_cliente
+      idCliente = (clienteSeleccionado as any)?.id_cliente ?? null  
     }
 
     setError(null)
