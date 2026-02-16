@@ -295,27 +295,32 @@ export default function CotizacionesPage() {
       doc.setFont('helvetica', 'bold')
       doc.text('Nombre:', leftX, yCliente)
       doc.setFont('helvetica', 'normal')
-      doc.text(cliente.nombre, 45, yCliente)
+      doc.text((cliente as any)?.nombre || '—', 45, yCliente)
+      //doc.text(cliente.nombre, 45, yCliente)
       yCliente += 5
       doc.setFont('helvetica', 'bold')
       doc.text('Email:', leftX, yCliente)
       doc.setFont('helvetica', 'normal')
-      doc.text(cliente.email || '—', 45, yCliente)
+      doc.text((cliente as any)?.email || '—', 45, yCliente)
+      //doc.text(cliente.email || '—', 45, yCliente)
       yCliente += 5
       doc.setFont('helvetica', 'bold')
       doc.text('Teléfono:', leftX, yCliente)
       doc.setFont('helvetica', 'normal')
-      doc.text(cliente.telefono || '—', 45, yCliente)
+      doc.text((cliente as any)?.telefono || '—', 45, yCliente)
+      //doc.text(cliente.telefono || '—', 45, yCliente)
       yCliente += 5
       doc.setFont('helvetica', 'bold')
       doc.text('Área:', leftX, yCliente)
       doc.setFont('helvetica', 'normal')
-      doc.text(cliente.area || '—', 45, yCliente)
+      doc.text((cliente as any)?.area || '—', 45, yCliente)
+      //doc.text(cliente.area || '—', 45, yCliente)
       yCliente += 5
       doc.setFont('helvetica', 'bold')
       doc.text('Empresa:', leftX, yCliente)
       doc.setFont('helvetica', 'normal')
-      doc.text(cliente.empresa || '—', 45, yCliente)
+      doc.text((cliente as any)?.empresa || '—', 45, yCliente)
+      //doc.text(cliente.empresa || '—', 45, yCliente)
       yCliente += 5
     } else {
       doc.text('—', leftX, yCliente)
@@ -364,11 +369,11 @@ export default function CotizacionesPage() {
       // Cotización no formal: Resumen de Costos (valores ingresados y resultantes de la página de registro)
       const y = yCliente + 8
       doc.setFontSize(12)
-      doc.setFont(undefined, 'bold')
+      doc.setFont('helvetica', 'bold')
       doc.setTextColor(37, 99, 235)
       doc.text('Resumen de Costos', 20, y)
       doc.setTextColor(0, 0, 0)
-      doc.setFont(undefined, 'normal')
+      doc.setFont('helvetica', 'normal')
       doc.setFontSize(10)
 
       autoTable(doc, {
