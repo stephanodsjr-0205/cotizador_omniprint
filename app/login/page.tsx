@@ -33,8 +33,10 @@ export default function LoginPage() {
 
       // Guardar usuario en sesión
       auth.setUser({
-        id_usuario: data.id_usuario,
-        usuario: data.usuario,
+        id_usuario: (data as any).id_usuario,
+        usuario: (data as any).usuario,
+        //id_usuario: data.id_usuario,
+        //usuario: data.usuario,
       })
 
       // Redirigir a la página principal
