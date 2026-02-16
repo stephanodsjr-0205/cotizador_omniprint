@@ -283,38 +283,38 @@ export default function CotizacionesPage() {
     doc.setFillColor(37, 99, 235)
     doc.rect(20, clienteSectionY, 170, 8, 'F')
     doc.setTextColor(255, 255, 255)
-    doc.setFont(undefined, 'bold')
+    doc.setFont('helvetica', 'bold')
     doc.setFontSize(10)
     doc.text('CLIENTE', 25, clienteSectionY + 5.5)
     doc.setTextColor(0, 0, 0)
-    doc.setFont(undefined, 'normal')
+    doc.setFont('helvetica', 'normal')
     doc.setFontSize(9)
 
     let yCliente = clienteSectionY + 12
     if (cliente) {
-      doc.setFont(undefined, 'bold')
+      doc.setFont('helvetica', 'bold')
       doc.text('Nombre:', leftX, yCliente)
-      doc.setFont(undefined, 'normal')
+      doc.setFont('helvetica', 'normal')
       doc.text(cliente.nombre, 45, yCliente)
       yCliente += 5
-      doc.setFont(undefined, 'bold')
+      doc.setFont('helvetica', 'bold')
       doc.text('Email:', leftX, yCliente)
-      doc.setFont(undefined, 'normal')
+      doc.setFont('helvetica', 'normal')
       doc.text(cliente.email || '—', 45, yCliente)
       yCliente += 5
-      doc.setFont(undefined, 'bold')
+      doc.setFont('helvetica', 'bold')
       doc.text('Teléfono:', leftX, yCliente)
-      doc.setFont(undefined, 'normal')
+      doc.setFont('helvetica', 'normal')
       doc.text(cliente.telefono || '—', 45, yCliente)
       yCliente += 5
-      doc.setFont(undefined, 'bold')
+      doc.setFont('helvetica', 'bold')
       doc.text('Área:', leftX, yCliente)
-      doc.setFont(undefined, 'normal')
+      doc.setFont('helvetica', 'normal')
       doc.text(cliente.area || '—', 45, yCliente)
       yCliente += 5
-      doc.setFont(undefined, 'bold')
+      doc.setFont('helvetica', 'bold')
       doc.text('Empresa:', leftX, yCliente)
-      doc.setFont(undefined, 'normal')
+      doc.setFont('helvetica', 'normal')
       doc.text(cliente.empresa || '—', 45, yCliente)
       yCliente += 5
     } else {
