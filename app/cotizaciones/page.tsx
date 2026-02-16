@@ -151,7 +151,8 @@ export default function CotizacionesPage() {
       year: 'numeric',
     })
     const numeroCotizacion = cotizacion.numero_cotizacion || '—'
-    const clienteId = cliente?.email ? cliente.email.split('@')[0].trim() : '—'
+    //const clienteId = cliente?.email ? cliente.email.split('@')[0].trim() : '—'
+    const clienteId = (cliente as any)?.email ? (cliente as any).email.split('@')[0].trim() : '—'
 
     const doc = new jsPDF()
 
